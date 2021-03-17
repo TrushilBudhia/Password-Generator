@@ -5,29 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <div class="wrapper">
+      <!-- START HEADER SECTION -->
       <header>
         <h1>Password Generator</h1>
       </header>
-      <div class="card">
-        <div class="card-header">
+      <!-- END HEADER SECTION -->
+      <!-- START MAIN CARD SECTION -->
+      <main>
+        <article class="card-header">
           <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
+        </article>
+        <article class="card-body">
           <textarea
             readonly
             id="password"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
-        </div>
-        <div class="card-footer">
+        </article>
+        <article class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
-        </div>
-      </div>
+        </article>
+      </main>
+      <!-- END MAIN CARD SECTION -->
+      <!-- START FOOTER SECTION -->
+      <footer>
+        <p>Modified by Trushil</p>
+      </footer>
+      <!-- END FOOTER SECTION -->
     </div>
     <script src="script.js"></script>
   </body>
