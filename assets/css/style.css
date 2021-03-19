@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --blue-gray: #3b4954;
+}
+
 /* General element styling */
 html,
 body,
@@ -26,7 +30,6 @@ body {
 }
 
 /* Wrapper styling */
-/* Why is this required? */
 .wrapper {
   padding-left: 20px;
   padding-right: 20px;
@@ -35,7 +38,7 @@ body {
 
 /* Header section styling */ 
 header {
-  color: hsl(206, 17%, 28%);
+  color: var(--blue-gray);
   padding: 20px;
   text-align: center;
 
@@ -49,14 +52,13 @@ main {
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  color: var(--blue-gray);
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
 }
 
-/* Can't a border-top be used instead? */
 .card-header::after {
   background: #e7e9eb;
   content: " ";
@@ -65,7 +67,6 @@ main {
   width: 100%;
 }
 
-/* Is this required? */
 .card-body {
   min-height: 100px;
 }
@@ -74,7 +75,6 @@ main {
   text-align: center;
 }
 
-/* Can't a border-top be used instead? */
 .card-footer::before {
   background: #e7e9eb;
   content: " ";
@@ -83,7 +83,7 @@ main {
   width: 100%;
 }
 
-/* What is this for? */
+/* Is the clearfix code needed when there is no float? Not clearing anything at the moment */
 .card-footer::after {
   clear: both;
   content: " ";
@@ -91,7 +91,7 @@ main {
 }
 
 .btn {
-  background-color: hsl(360, 91%, 36%);
+  background-color: #d22d29;
   border: none;
   border-radius: 25px;
   box-shadow:  0px 1px 6px 0px rgba(0, 0, 0, 0.1), 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
@@ -107,7 +107,7 @@ main {
 
 /* Hover effect on the button */
 .btn:hover {
-  background: rgb(226, 12, 12);
+  background: #af0815;
 }
 
 /* Active effect on the button */
@@ -140,25 +140,15 @@ button {
   text-align: center;
   width: 100%;
 }
-/* 
-footer {
-  background: #313131;
-  color: #fff;
-  margin: 0 auto;
-  margin-top: 100px;
-  padding: 20px;
-  text-align: center;
-  width: 100%;
-} */
 
 /* Media Queries */
 @media (max-width: 690px) {
+
   .btn {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
   }
-
   #password {
     font-size: 1rem;
   }

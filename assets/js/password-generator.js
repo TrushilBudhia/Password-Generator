@@ -24,24 +24,23 @@ function writePassword() {
 
 // Creating a function object to generate the randomized password with the specified criteria from the user
 var generatePassword = function() {
-  // Declaring the passwordValue variable and setting the value to blank
   var passwordValue = "";
 
   // Prompting the user to enter the password length
   var passwordLength = parseInt(prompt("Enter the length of the password (between 8-128 characters):"));
 
   // Using a while statement to analyse the users length input - if the value does not meet the criteria, an error message is displayed and the user is returned to the start of the process
-  while (passwordLength < 8 || passwordLength > 128 || passwordLength === NaN || passwordLength === null || typeof(passwordLength) != "number" ) {
+  while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength) || passwordLength === null || typeof(passwordLength) != "number" ) {
     alert("Password length does not meet the criteria (between 8-128 characters). Try again");
-    generatePassword();
+    passwordLength = parseInt(prompt("Enter the length of the password (between 8-128 characters):"));
   };
-  
+
   // passwordCriteria() function is invoked and the confirm messages are prompted
   passwordCriteria();
 
   // A message that displays when none of the password character type criteria is selected
   // Invokes the function passwordCriteria() again to reconfirm with the user what character types they wish to select
-  while (!lowercaseChar && !uppercaseChar && !numberChar && !specialChar) {
+  while (!lowercaseUse && !uppercaseUse && !numberUse && !specialUse) {
     alert("You must select at least one character type");
     passwordCriteria();
   }
@@ -59,9 +58,6 @@ var generatePassword = function() {
   if (specialUse) {
     characterArray.push(specialChar);
   }
-
-  // Declaring the characters variable and assigning it a value of the relevant characters used across the different character types chosen by the user
-  //var characters = lowercaseValue + uppercaseValue + numberValue + specialValue;
 
   // Using a for loop and Math random code to randomize the password which is then assigned to the passwordValue variable
   for(var i = 0; i < passwordLength; i++) {
@@ -96,9 +92,7 @@ var passwordCriteria = function() {
   uppercaseUse = confirm("Do you want uppercase letters in your password?");
   numberUse = confirm("Do you want numbers in your password?");
   specialUse = confirm("Do you want special characters in your password?");
-
 }
+
 // Add event listener to the #generate button id - when the mouse is clicked on the button, the writePassword() function runs
 generateBtn.addEventListener("click", writePassword);
-
-// TODO
