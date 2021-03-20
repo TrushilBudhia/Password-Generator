@@ -1,4 +1,3 @@
-// Assignment Code
 // Declaring variables and assigning each variable an array value
 var lowercaseChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var uppercaseChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -29,63 +28,71 @@ var generatePassword = function() {
   // Prompting the user to enter the password length
   var passwordLength = parseInt(prompt("Enter the length of the password (between 8-128 characters):", passwordLengthStart));
 
-  // Using an if statement to analyse the users length and subsequent inputs - an error message is displayed if not the correct character length
+  // Using an if statement to detect if the user proceeded with the prompt or not
   if(!passwordLength) {
-    return passwordValue = "";;
-  } else if(passwordLength >= 8 && passwordLength <= 128 ) {
-    // passwordCriteria() function is invoked and the confirm messages are prompted
-    passwordCriteria();
+    return passwordValue = "";
+  } else if(passwordLength) {
+    // Using a while statement to analyse the users length input - an error message is displayed if not the correct character length
+    while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength) || passwordLength === null || typeof(passwordLength) != "number" ) {
+      alert("Password length does not meet the criteria (between 8-128 characters). Try again");
+      passwordLength = parseInt(prompt("Enter the length of the password (between 8-128 characters):"));
+      passwordValue = "";
+    };
 
-    // A message that displays when none of the password character type criteria is selected
-    // Invokes the function passwordCriteria() again to reconfirm with the user what character types they wish to select
-    while (!lowercaseUse && !uppercaseUse && !numberUse && !specialUse) {
-      alert("You must select at least one character type");
+    // Using an if statement to check if passwordLength matches the criteria
+    if (passwordLength >= 8 && passwordLength <= 128) {
+      // passwordCriteria() function is invoked and the confirm messages are prompted
       passwordCriteria();
+
+      // A message that displays when none of the password character type criteria is selected
+      // Invokes the function passwordCriteria() again to reconfirm with the user what character types they wish to select
+      while (!lowercaseUse && !uppercaseUse && !numberUse && !specialUse) {
+        alert("You must select at least one character type");
+        passwordCriteria();
+      }
+
+      // Using if statements to check whether the specific character type is selected and changes the value of the relevant variable if they are
+      if (lowercaseUse) {
+        characterArray.push(lowercaseChar);
+      }
+      if (uppercaseUse) {
+        characterArray.push(uppercaseChar);
+      }
+      if (numberUse) {
+        characterArray.push(numberChar);
+      }
+      if (specialUse) {
+        characterArray.push(specialChar);
+      }
+
+      // Using a for loop and Math random code to randomize the password which is then assigned to the passwordValue variable
+      for(var i = 0; i < passwordLength; i++) {
+        var charArrayNumber;
+        var selectedCharArray;
+        var randomCharNumber;
+        var randomChar;
+
+        // Generates a random number based on the characterArray length - between 0-3 in this case. 
+        charArrayNumber = parseInt(Math.floor(Math.random()*characterArray.length)); 
+
+        // Uses the number arrived at in charArrayNumber to index the character type stored in the characterArray - either lowercase(0), uppercase(1), numbers(2) or special characters(3).  
+        selectedCharArray = characterArray[charArrayNumber];
+
+        // Generates a random number based on the selected character type array length - either 0-25 (for lowercase or uppercase), 0-9 (for numbers) or 0-32 (for special characters)
+        randomCharNumber = Math.floor(Math.random()*selectedCharArray.length);
+
+        // Uses the number arrived at in randomCharNumber to index the value stored in the selectedCharArray
+        randomChar = selectedCharArray[randomCharNumber];
+        
+        // Each time the loop runs, the random character is added to the passwordValue until the passwordLength specified by the user is reached
+        passwordValue += randomChar;
+      }
+      // Returns the passwordValue variable with the updated value
+      return passwordValue;
+    } else {
+      return passwordValue = "";
     }
-
-    // Using if statements to check whether the specific character type is selected and changes the value of the relevant variable if they are
-    if (lowercaseUse) {
-      characterArray.push(lowercaseChar);
-    }
-    if (uppercaseUse) {
-      characterArray.push(uppercaseChar);
-    }
-    if (numberUse) {
-      characterArray.push(numberChar);
-    }
-    if (specialUse) {
-      characterArray.push(specialChar);
-    }
-
-    // Using a for loop and Math random code to randomize the password which is then assigned to the passwordValue variable
-    for(var i = 0; i < passwordLength; i++) {
-      var charArrayNumber;
-      var selectedCharArray;
-      var randomCharNumber;
-      var randomChar;
-
-      // Generates a random number based on the characterArray length - between 0-3 in this case. 
-      charArrayNumber = parseInt(Math.floor(Math.random()*characterArray.length)); 
-
-      // Uses the number arrived at in charArrayNumber to index the character type stored in the characterArray - either lowercase(0), uppercase(1), numbers(2) or special characters(3).  
-      selectedCharArray = characterArray[charArrayNumber];
-
-      // Generates a random number based on the selected character type array length - either 0-25 (for lowercase or uppercase), 0-9 (for numbers) or 0-32 (for special characters)
-      randomCharNumber = Math.floor(Math.random()*selectedCharArray.length);
-
-      // Uses the number arrived at in randomCharNumber to index the value stored in the selectedCharArray
-      randomChar = selectedCharArray[randomCharNumber];
-      
-      // Each time the loop runs, the random character is added to the passwordValue until the passwordLength specified by the user is reached
-      passwordValue += randomChar;
-    }
-
-    // Returns the passwordValue variable with the updated value
-    return passwordValue;
-  } else {
-  alert("Password length does not meet the criteria (between 8-128 characters). Try again");
-  passwordLength = parseInt(prompt("Enter the length of the password (between 8-128 characters):"));
-  }
+  } 
 }
 
 // Creating a function object that prompts confirm messages for the different character types desired for the password
