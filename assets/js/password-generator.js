@@ -56,10 +56,6 @@ var generatePassword = function() {
     if (specialUse) {
       characterArray.push(specialChar);
     }
-    console.log(lowercaseUse);
-    console.log(uppercaseUse);
-    console.log(numberUse);
-    console.log(specialUse);
 
     // Using a for loop and Math random code to randomize the password which is then assigned to the passwordValue variable
     for(var i = 0; i < passwordLength; i++) {
@@ -102,3 +98,6 @@ var passwordCriteria = function() {
 
 // Add event listener to the #generate button id - when the mouse is clicked on the button, the writePassword() function runs
 generateBtn.addEventListener("click", writePassword);
+
+// TODO
+// Add a copy button to make using the password easier
