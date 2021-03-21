@@ -8,7 +8,7 @@ The user can select the length of the password and whether it includes lower cas
 
 The password length needs to be between 8-128 characters.
 
-Once the prompts are answered and the information verfied, the randomized password will be display in the web page based on the criteria the user has selected.
+Once the prompts are answered and the information verfied, the randomized password will be displayed in the web page based on the criteria the user has selected.
 
 ## Link
 

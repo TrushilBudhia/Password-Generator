@@ -42,9 +42,6 @@ informationSection.appendChild(informationText);
 var buttonStyle = document.getElementsByClassName('btn');
 buttonStyle[0].style.outline = "none";
 
-// Removing the padding in the wrapper class
-wrapperSelect.setAttribute('style', 'padding: 0px')
-
 // Adding styling to the HEADER element
 headerSelect.setAttribute('style', 'background: #fff; box-shadow: 0 1px 2px 0 rgb(0 0 0 / 50%); color: #00688B; font-size: 20px;');
 

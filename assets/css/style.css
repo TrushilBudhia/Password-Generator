@@ -26,14 +26,6 @@ body,
 body {
   background-color: #f9fbfd;
   font-family: sans-serif;
-
-}
-
-/* Wrapper styling */
-.wrapper {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 30px;
 }
 
 /* Header section styling */ 
@@ -41,9 +33,6 @@ header {
   color: var(--blue-gray);
   padding: 20px;
   text-align: center;
-
-  /* padding-top: 0px; - delete */
-
 }
 
 /* Main section styling */
@@ -59,35 +48,12 @@ main {
   padding: 30px 40px;
 }
 
-.card-header::after {
-  background: #e7e9eb;
-  content: " ";
-  display: block;
-  height: 2px;
-  width: 100%;
-}
-
-.card-body {
-  min-height: 100px;
+.card-header h2 {
+  text-align: center;
 }
 
 .card-footer {
   text-align: center;
-}
-
-.card-footer::before {
-  background: #e7e9eb;
-  content: " ";
-  display: block;
-  height: 2px;
-  width: 100%;
-}
-
-/* Is the clearfix code needed when there is no float? Not clearing anything at the moment */
-.card-footer::after {
-  clear: both;
-  content: " ";
-  display: block;
 }
 
 .btn {
@@ -115,7 +81,6 @@ main {
   background: #16B4B2;
 }
 
-/* Is this required? */
 button {
   cursor: default;
   background: #c0c7cf;
@@ -125,7 +90,7 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: 2px dashed #c0c7cf;
+  border: 2px solid #c0c7cf;
   border-radius: 6px;
   display: block;
   font-size: 1.2rem;
@@ -143,7 +108,6 @@ button {
 
 /* Media Queries */
 @media (max-width: 690px) {
-
   .btn {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
