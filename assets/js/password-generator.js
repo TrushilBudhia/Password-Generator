@@ -18,7 +18,6 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  console.log(password);
 }
 
 // Creating a function object to generate the randomized password with the specified criteria from the user
