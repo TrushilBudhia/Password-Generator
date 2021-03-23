@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 var passwordLengthStart = 8;
 
 // Creating a randomFunc object that contains the values for lower, upper, number and symbol
-const randomFunc = {
+const typeSelection = {
 	lower: getRandomLower,
 	upper: getRandomUpper,
 	number: getRandomNumber,
@@ -51,8 +51,8 @@ function generatePassword(lower, upper, number, symbol, passwordLength) {
   // The forEach method ensures the selected character type(s) chosen by the user is used in the password
 	for(let i=0; i<passwordLength; i+=charTypesCount) {
 		chosenCharTypesArr.forEach(type => {
-			var funcName = Object.keys(type)[0];
-			generatedPassword += randomFunc[funcName]();			
+			var characterTypeFunctionName = Object.keys(type)[0];
+			generatedPassword += typeSelection[characterTypeFunctionName]();	
 		});
 	}
   // Shuffling the generatedPassword using the sort method and assigning the value to the shuffledPassword variable
