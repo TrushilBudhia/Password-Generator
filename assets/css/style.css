@@ -1,3 +1,10 @@
+/* CSS Variables */
+:root {
+  --blue-gray: #3b4954;
+  --grayish-blue: #c0c7cf;
+  --white: #ffffff;
+}
+
 /* Universal styling */
 * {
   margin: 0;
@@ -8,10 +15,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-:root {
-  --blue-gray: #3b4954;
 }
 
 /* General element styling */
@@ -37,7 +40,7 @@ header {
 
 /* Main section styling */
 main {
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--white);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
@@ -61,7 +64,7 @@ main {
   border: none;
   border-radius: 25px;
   box-shadow:  0px 1px 6px 0px rgba(0, 0, 0, 0.1), 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
-  color: hsl(0, 0%, 100%);
+  color: var(--white);
   cursor: pointer;
   display: inline-block;
   font-size: 22px;
@@ -83,14 +86,14 @@ main {
 
 button {
   cursor: default;
-  background: #c0c7cf;
+  background: var(--grayish-blue);
 }
 
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: 2px solid #c0c7cf;
+  border: 2px solid var(--grayish-blue);
   border-radius: 6px;
   display: block;
   font-size: 1.2rem;
