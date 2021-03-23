@@ -1,6 +1,6 @@
 /* ADDING HTML ELEMENTS */
 
-/// Declaring variables and assigning values of an element selected to them
+// Declaring variables and assigning values of an element selected to them
 var body = document.body;
 var wrapperSelect = body.children[0];
 var headerSelect = document.querySelector('header');
@@ -35,7 +35,7 @@ var informationText = document.createElement('p');
 informationText.textContent = "Having a weak password can lead to it being hacked more easily. Passwords are a real security threat. If you wish to protect your personal information, creating strong and secure passwords are paramount. This is where the Password Generator can help. Passwords that are hard to crack contain multiple types of characters (lower and uppercase letters, numbers and special characters). An additional step to defend against hacking is to ensuring you have different passwords for each login.";
 informationSection.appendChild(informationText);
 
-// CHANGING THE STYLE PROPERTIES
+/* CHANGING THE STYLE PROPERTIES */
 
 // Declaring variable and assigning it a value - selects the btn class
 // Changes the outline style to none
