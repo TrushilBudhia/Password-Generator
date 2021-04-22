@@ -1,14 +1,5 @@
 # Password Generator
 
-## 📖Table of Contents
-1. [Description](#✒️description)
-2. [Link](#🚀Link)
-3. [Screenshots](#🎉Screenshots)
-4. [Technologies](#💻Technologies)
-5. [Contributing](#🤝Contributing)
-6. [Author](#👾Author)
-7. [License](#📝License)
-
 ## ✒️Description
 An application that enables the user to generate a random password based on criteria they have selected.
 
@@ -36,7 +27,6 @@ The following images show the web application's appearance:
 - JavaScript
 - HTML
 - CSS
-- Font Awesome (icons)
 
 ## 🤝Contributing
 Contributions, issues and feature requests are welcome.
